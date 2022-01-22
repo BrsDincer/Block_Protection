@@ -62,7 +62,7 @@ class START_PROCESS():
                                                   f"{chain_spec['chain'][0]['proof_message']}",
                                                   u_list[-1],
                                                   "blockchain.db")
-                            read_all = DB_PROCESS.READ_DB("C:\\Users\\Asus\\Desktop\\blockchain.db")
+                            read_all = DB_PROCESS.READ_DB("blockchain.db")
                             for x_count,_ in enumerate(read_all):
                                 s_t.tx("---"*7)
                                 s_t.md(ST_HTML.RUN_CONNECTED(str(read_all[x_count-1][1])),
@@ -79,7 +79,7 @@ class START_PROCESS():
                     try:
                         s_t.md(ST_HTML.RUN_HEAD("KNOWLEDGE TREE"),
                                unsafe_allow_html=True)
-                        read_all = DB_PROCESS.READ_DB("C:\\Users\\Asus\\Desktop\\blockchain.db")
+                        read_all = DB_PROCESS.READ_DB("blockchain.db")
                         json_data = json.dumps(read_all)
                         s_t.j(json_data)
                     except:
@@ -149,3 +149,9 @@ class RUN_ST_ALL():
         START_PROCESS.LAUNCHED_FUNCTION()
     
 RUN_ST_ALL.RUNNING_PROCESS()
+
+if __name__ == "__main__":
+    try:
+        RUN_ST_ALL.RUNNING_PROCESS()
+    except:
+        pass
